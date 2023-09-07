@@ -8,7 +8,7 @@ const Informations = async (req, res) => {
       .status(400)
       .json({ error: "Both parameters (slack_name and track) are required." });
   }
-  const currentUTC = new Date().toISOString();
+  const currentUTC = new Date().toISOString().split(".")[0] + "Z";
   const timeZoneOffset = new Date().getTimezoneOffset();
   if (Math.abs(timeZoneOffset) > 120) {
     return res

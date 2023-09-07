@@ -6,7 +6,7 @@ app.use(express.json());
 
 
 const v1Router = require("./routes");
-app.use("/api/v1", v1Router);
+app.use("/", v1Router);
 
 
 
