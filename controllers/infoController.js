@@ -26,8 +26,9 @@ const Informations = async (req, res) => {
     "Saturday",
   ];
   const currentDayOfWeek = daysOfWeek[new Date().getDay()];
-  const githubFileURL = "https://github.com/uloamaka";
-  const githubSourceURL = "YourGitHubSourceURL"; // Replace with your GitHub source code URL
+  const githubFileURL =
+    "https://github.com/uloamaka/liveInfos/blob/main/app.js";
+  const githubSourceURL = "https://github.com/uloamaka/liveInfos"; // Replace with your GitHub source code URL
 
   // Return the result as JSON
   const result = {
