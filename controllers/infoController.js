@@ -8,7 +8,7 @@ const Informations = async (req, res) => {
       .status(400)
       .json({ error: "Both parameters (slack_name and track) are required." });
   }
-  const currentUTC = new Date().toISOString().split(".")[0] + "Z";
+  const utc_time = new Date().toISOString().split(".")[0] + "Z";
   const timeZoneOffset = new Date().getTimezoneOffset();
   if (Math.abs(timeZoneOffset) > 120) {
     return res
@@ -16,7 +16,7 @@ const Informations = async (req, res) => {
       .json({ error: "Timezone offset is greater than +/-2 hours." });
   }
 
-  const daysOfWeek = [
+  const daysOfWeek= [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -25,20 +25,20 @@ const Informations = async (req, res) => {
     "Friday",
     "Saturday",
   ];
-  const currentDayOfWeek = daysOfWeek[new Date().getDay()];
-  const githubFileURL =
+  const current_day = daysOfWeek[new Date().getDay()];
+  const github_file_url =
     "https://github.com/uloamaka/liveInfos/blob/main/app.js";
-  const githubSourceURL = "https://github.com/uloamaka/liveInfos"; // Replace with your GitHub source code URL
+  const github_repo_url = "https://github.com/uloamaka/liveInfos"; // Replace with your GitHub source code URL
 
   // Return the result as JSON
   const result = {
     slack_name,
-    currentDayOfWeek,
-    currentUTC,
+    current_day,
+    utc_time,
     track,
-    githubFileURL,
-    githubSourceURL,
-    statusCode: 200,
+    github_file_url,
+    github_repo_url,
+    status_code: 200,
   };
 
   res.json(result);
