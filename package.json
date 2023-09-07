@@ -1,0 +1,26 @@
+{
+  "name": "liveinfos",
+  "version": "1.0.0",
+  "description": "Hng backend track first task",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uloamaka/liveInfos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uloamaka/liveInfos/issues"
+  },
+  "homepage": "https://github.com/uloamaka/liveInfos#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
